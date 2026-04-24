@@ -163,10 +163,17 @@ TON OBJECTIF : Produire un plan de commentaire d'arrêt d'une rigueur académiqu
 - Un lien direct expliquant comment l'arrêt n° ${pourvoi} s'inscrit précisément dans cette problématique.
 
 2. PLAN ULTRA-DÉTAILLÉ (I. A, B / II. A, B)
-Le plan doit être technique, sans verbe conjugué dans les titres. Pour chaque sous-partie (A et B), fournis :
+Le plan doit être technique et les TITRES DOIVENT TOUJOURS ÊTRE APPARENT.
+RÈGLES CRITIQUES POUR LES TITRES :
+- AUCUN verbe conjugué.
+- AUCUN signe de ponctuation de type "deux-points" (:).
+- AUCUNE interrogation ou point d'interrogation.
+- Le titre doit être qualifié, élégant et laisser clairement apparaître la substance de l'argumentation.
+
+Pour chaque sous-partie (A et B), fournis :
 
 ---
-**[TITRE TECHNIQUE ET QUALIFIÉ]**
+**[TITRE TECHNIQUE, QUALIFIÉ ET APPARENT]**
 
 THÈSE CENTRALE : [Une phrase résumant l'idée directrice de la sous-partie.]
 
