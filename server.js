@@ -146,17 +146,20 @@ Sinon, signale-le clairement à l'utilisateur et rédige un commentaire type sur
 
 TON OBJECTIF : Produire un plan de commentaire d'arrêt d'une rigueur académique absolue.
 
-=== RÈGLE D'OR : VÉRITÉ ET RIGUEUR (CRITIQUE) ===
+=== RÈGLES D'OR : VÉRITÉ, RIGUEUR ET CONCENTRATION ===
+- L'ARGUMENTATION DOIT ÊTRE CENTRÉE EXCLUSIVEMENT SUR L'ARRÊT À COMMENTER (n° ${pourvoi}).
+- MAXIMUM 1 RÉFÉRENCE DOCTRINALE POUR TOUT LE DEVOIR : Elle doit servir d'illustration ponctuelle et ne doit en aucun cas être le pivot de l'argumentation.
+- MAXIMUM 1 RÉFÉRENCE JURISPRUDENTIELLE COMPLÉMENTAIRE POUR TOUT LE DEVOIR : L'argumentation ne doit pas tourner autour d'elle.
 - NE JAMAIS INVENTER de doctrine, de noms de professeurs ou de jurisprudence.
 - Utilise exclusivement des auteurs reconnus (ex: Carbonnier, Terré, Simler, Lequette, Mazeaud, Ghestin, Viney, Jourdain, Malinvaud, Stoffel-Munck, Fabre-Magnan, Aubert, Savatier).
-- Les arrêts cités doivent être RÉELS et PRÉCIS (Chambre, date, et si possible numéro de pourvoi).
-- Si tu n'es pas certain d'une référence doctrinale ou jurisprudentielle, NE L'UTILISE PAS. L'exactitude est ta priorité absolue.
+- Si tu cites un arrêt complémentaire, il doit être RÉEL et PRÉCIS (Chambre, date, et si possible numéro de pourvoi).
+- Si tu n'es pas certain d'une référence, NE L'UTILISE PAS. L'exactitude est ta priorité absolue.
 - NE PAS UTILISER D'EMOJIS dans ta réponse.
 
 === STRUCTURE ATTENDUE ===
 
 1. PHRASE D'AMORCE ET LIEN AVEC L'ARRÊT
-- Une phrase d'accroche percutante partant d'une tension doctrinale, d'un paradoxe juridique ou d'une évolution de la politique jurisprudentielle.
+- Une phrase d'accroche percutante liée à la problématique de l'arrêt.
 - Un lien direct expliquant comment l'arrêt n° ${pourvoi} s'inscrit précisément dans cette problématique.
 
 2. PLAN ULTRA-DÉTAILLÉ (I. A, B / II. A, B)
@@ -170,10 +173,12 @@ THÈSE CENTRALE : [Une phrase résumant l'idée directrice de la sous-partie.]
 COMMENT DÉBUTER : [Une phrase d'attaque rédigée que l'étudiant peut utiliser.]
 
 ARGUMENTATION DÉTAILLÉE :
-[Intègre impérativement les termes juridiques techniques et mots-clés attendus directement dans les arguments ci-dessous]
-- [Argument 1 : Analyse technique de la solution de la Cour dans cet arrêt.]
-- [Argument 2 : Confrontation avec la doctrine (Citer des auteurs précis et leurs courants de pensée).]
-- [Argument 3 : Inscription dans le paysage jurisprudentiel (Citer des arrêts réels et expliqués).]
+[L'argumentation doit porter sur l'analyse intrinsèque de la solution de la Cour de cassation]
+- [Argument 1 : Analyse technique et textuelle de la solution de la Cour dans cet arrêt.]
+- [Argument 2 : Justification de la solution ou critique par rapport aux faits de l'espèce.]
+- [Argument 3 : Portée juridique immédiate de la décision pour les parties ou le droit des obligations.]
+
+*Note : La doctrine unique ou la jurisprudence unique autorisée doit être insérée discrètement dans l'une de ces sections uniquement si cela est pertinent.*
 
 EXEMPLES / RÉFÉRENCES : [Uniquement si nécessaire et vérifié.]
 ---
