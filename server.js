@@ -162,18 +162,22 @@ TON OBJECTIF : Produire un plan de commentaire d'arrêt d'une rigueur académiqu
 - Une phrase d'accroche percutante liée à la problématique de l'arrêt.
 - Un lien direct expliquant comment l'arrêt n° ${pourvoi} s'inscrit précisément dans cette problématique.
 
-2. PLAN ULTRA-DÉTAILLÉ (I. A, B / II. A, B)
-Le plan doit être technique et les TITRES DOIVENT TOUJOURS ÊTRE APPARENT.
+2. PLAN ULTRA-DÉTAILLÉ (STRUCTURE CLASSIQUE : I. A, B / II. A, B)
+Le plan doit impérativement respecter la structure académique : un I (divisé en A et B) et un II (divisé en A et B).
+Les TITRES DOIVENT TOUJOURS ÊTRE APPARENT ET NUMÉROTÉS (I, II, A, B).
+
 RÈGLES CRITIQUES POUR LES TITRES :
 - AUCUN verbe conjugué.
 - AUCUN signe de ponctuation de type "deux-points" (:).
 - AUCUNE interrogation ou point d'interrogation.
 - Le titre doit être qualifié, élégant et laisser clairement apparaître la substance de l'argumentation.
 
-Pour chaque sous-partie (A et B), fournis :
+Pour chaque niveau du plan, respecte ce format :
 
 ---
-**[TITRE TECHNIQUE, QUALIFIÉ ET APPARENT]**
+**[I. OU II. TITRE DU GRAND AXE]**
+
+**[A) OU B) TITRE DE LA SOUS-PARTIE TECHNIQUE ET QUALIFIÉ]**
 
 THÈSE CENTRALE : [Une phrase résumant l'idée directrice de la sous-partie.]
 
