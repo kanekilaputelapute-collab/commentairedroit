@@ -1,11 +1,12 @@
 /**
- * server.js — Backend Express · Générateur de Commentaire d'Arrêt
- * Stack : Node.js + Express + Judilibre (open data Cour de cassation) + Gemini 3.1 Flash-Lite
+ * server.js — Backend Express · Expert Droit Administratif
+ * IA : Claude Sonnet 4.6
  */
 
 require("dotenv").config();
 const express = require("express");
 const path    = require("path");
+const fs      = require("fs");
 
 const app  = express();
 const PORT = process.env.PORT || 3000;
@@ -13,266 +14,85 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-// ── Vérification clé Gemini ────────────────────────────────────────────────────
-if (!process.env.GEMINI_API_KEY) {
-  console.error("❌  GEMINI_API_KEY manquante dans .env");
-  process.exit(1);
-}
+// Chargement de la base de jurisprudence au démarrage
+const jurisprudenceData = JSON.parse(fs.readFileSync(path.join(__dirname, "jurisprudence.json"), "utf8"));
+const jurisprudenceString = jurisprudenceData.map(a => `- ${a.nom} (${a.juridiction}, ${a.date}) [${a.theme}] : ${a.apport}`).join("\n");
 
-// ─────────────────────────────────────────────────────────────────────────────
-// ÉTAPE 1 — Recherche de l'arrêt via l'API Judilibre (Cour de cassation)
-//
-// Judilibre est l'open data officiel gratuit de la Cour de cassation.
-// Inscription clé : https://piste.gouv.fr  (chercher "Judilibre")
-// Sans clé JUDILIBRE_API_KEY dans .env → on passe directement à Gemini
-// avec les seules métadonnées fournies par l'utilisateur.
-// ─────────────────────────────────────────────────────────────────────────────
-async function fetchArretFromJudilibre(pourvoi, chambre, date) {
-  const apiKey = process.env.JUDILIBRE_API_KEY;
-  if (!apiKey) {
-    console.log("ℹ️   Pas de clé Judilibre — utilisation de la connaissance interne de Gemini.");
-    return null;
-  }
+async function generateDissertation(sujet) {
+  const MODEL = "claude-sonnet-4-6";
+  const URL   = "https://api.anthropic.com/v1/messages";
 
-  const params = new URLSearchParams({ query: pourvoi, page_size: 5 });
-  const url = `https://api.piste.gouv.fr/cassation/judilibre/v1.0/search?${params}`;
+  const prompt = `Tu es un professeur agrégé de droit public. Sujet : "${sujet}".
 
-  try {
-    const res = await fetch(url, {
-      headers: { "KeyId": apiKey, "accept": "application/json" },
-    });
+BASE JURISPRUDENTIELLE VÉRIFIÉE — Tu dois UNIQUEMENT utiliser les arrêts listés ci-dessous. Ne jamais citer un arrêt qui n'y figure pas.
+${jurisprudenceString}
 
-    if (!res.ok) {
-      console.warn(`⚠️   Judilibre HTTP ${res.status} — on continue sans le texte.`);
-      return null;
-    }
+Génère un plan de dissertation en droit administratif français avec ce format EXACT :
 
-    const data  = await res.json();
-    const results = data?.results || [];
+INTRODUCTION
+Amorce : [3 phrases de contexte]
+Problématique : [1 question]
 
-    if (results.length === 0) {
-      console.log("ℹ️   Judilibre : aucun résultat pour ce numéro de pourvoi.");
-      return null;
-    }
+I. [TITRE PARTIE 1]
+  A. [Titre sous-partie]
+    → Idée : [1 ligne — l'idée à démontrer ET en quoi elle répond à la problématique]
+    → Arrêt : [Nom exact, juridiction, date exacte — 1 ligne expliquant comment cet arrêt démontre concrètement l'idée et répond à la problématique]
 
-    // Choisir la décision qui correspond le mieux à chambre + date si plusieurs résultats
-    let best = results[0];
-    if (results.length > 1) {
-      const chambreNorm = chambre.toLowerCase();
-      const dateNorm    = date ? date.toLowerCase() : "";
-      for (const r of results) {
-        const rChambre = (r.chamber || "").toLowerCase();
-        const rDate    = (r.decision_date || "").toLowerCase();
-        if (rChambre.includes(chambreNorm) || chambreNorm.includes(rChambre)) {
-          if (!dateNorm || rDate.includes(dateNorm.slice(0, 4))) {
-            best = r;
-            break;
-          }
-        }
-      }
-    }
+  B. [Titre sous-partie]
+    → Idée : [1 ligne — l'idée à démontrer ET en quoi elle répond à la problématique]
+    → Arrêt : [Nom exact, juridiction, date exacte — 1 ligne expliquant comment cet arrêt démontre concrètement l'idée et répond à la problématique]
 
-    // Récupérer le texte complet si un id est disponible
-    let texteComplet = best.text || best.summary || null;
-    if (best.id && !texteComplet) {
-      const detailRes = await fetch(
-        `https://api.piste.gouv.fr/cassation/judilibre/v1.0/decision?id=${best.id}`,
-        { headers: { "KeyId": apiKey, "accept": "application/json" } }
-      );
-      if (detailRes.ok) {
-        const detail = await detailRes.json();
-        texteComplet = detail.text || detail.summary || null;
-      }
-    }
+II. [TITRE PARTIE 2]
+  A. [Titre sous-partie]
+    → Idée : [1 ligne — l'idée à démontrer ET en quoi elle répond à la problématique]
+    → Arrêt : [Nom exact, juridiction, date exacte — 1 ligne expliquant comment cet arrêt démontre concrètement l'idée et répond à la problématique]
 
-    return {
-      id:       best.id,
-      chambre:  best.chamber  || chambre,
-      date:     best.decision_date || date,
-      solution: best.solution || null,
-      texte:    texteComplet,
-    };
+  B. [Titre sous-partie]
+    → Idée : [1 ligne — l'idée à démontrer ET en quoi elle répond à la problématique]
+    → Arrêt : [Nom exact, juridiction, date exacte — 1 ligne expliquant comment cet arrêt démontre concrètement l'idée et répond à la problématique]
 
-  } catch (err) {
-    console.warn("⚠️   Erreur Judilibre :", err.message, "— on continue sans le texte.");
-    return null;
-  }
-}
+RÈGLES ABSOLUES :
+- Idée : strictement 1 ligne
+- Arrêt : strictement 1 ligne (référence + lien avec l'idée et la problématique)
+- N'utiliser QUE les arrêts de la base fournie ci-dessus. Si aucun arrêt ne convient, écrire : Arrêt : [aucun arrêt disponible dans la base]
+- Ne jamais inventer un arrêt. Si tu n'es pas certain à 100%, écrire "Arrêt : [à vérifier]"
+- Pas de développement rédigé, uniquement les flèches
+- Pas d'émojis
+- Respecter exactement le format ci-dessus`;
 
-// ─────────────────────────────────────────────────────────────────────────────
-// ÉTAPE 2 — Génération du commentaire via Gemini
-// ─────────────────────────────────────────────────────────────────────────────
-async function generateCommentary(pourvoi, chambre, date, arret) {
-  const MODEL = "gemini-3.1-flash-lite-preview";
-  const URL   = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
-
-  // ── Contexte arrêt ──────────────────────────────────────────────────────
-  let contexteArret;
-  if (arret && arret.texte) {
-    contexteArret = `
-L'arrêt a été retrouvé dans la base Judilibre. Voici son texte intégral (source officielle) :
-
---- DÉBUT DU TEXTE DE L'ARRÊT ---
-${arret.texte.slice(0, 12000)}
---- FIN DU TEXTE DE L'ARRÊT ---
-
-Chambre : ${arret.chambre}
-Date : ${arret.date}
-Solution : ${arret.solution || "non précisée"}
-`.trim();
-  } else if (arret) {
-    contexteArret = `
-L'arrêt a été partiellement identifié dans Judilibre mais son texte intégral n'est pas disponible.
-Chambre : ${arret.chambre}
-Date : ${arret.date}
-Solution : ${arret.solution || "non précisée"}
-Utilise ces métadonnées et ta connaissance interne pour rédiger le commentaire.
-`.trim();
-  } else {
-    contexteArret = `
-Aucun texte d'arrêt n'a pu être récupéré automatiquement.
-Éléments fournis par l'utilisateur :
-- Numéro de pourvoi : ${pourvoi}
-- Chambre : ${chambre}
-- Date : ${date || "non renseignée"}
-
-Si ces éléments te permettent d'identifier l'arrêt à partir de ta connaissance interne (cutoff janvier 2025), utilise-la.
-Sinon, signale-le clairement à l'utilisateur et rédige un commentaire type sur une problématique plausible du droit des obligations pour cette chambre.
-`.trim();
-  }
-
-  // ── Prompt complet ──────────────────────────────────────────────────────
-  const prompt = `Tu es un professeur agrégé de droit privé français, expert en droit des obligations et correcteur de copies de Master.
-
-TON OBJECTIF : Produire un plan de commentaire d'arrêt d'une rigueur académique absolue.
-
-=== RÈGLES D'OR : VÉRITÉ, RIGUEUR ET CONCENTRATION ===
-- L'ARGUMENTATION DOIT ÊTRE CENTRÉE EXCLUSIVEMENT SUR L'ARRÊT À COMMENTER (n° ${pourvoi}).
-- MAXIMUM 1 RÉFÉRENCE DOCTRINALE POUR TOUT LE DEVOIR : Elle doit servir d'illustration ponctuelle et ne doit en aucun cas être le pivot de l'argumentation.
-- MAXIMUM 1 RÉFÉRENCE JURISPRUDENTIELLE COMPLÉMENTAIRE POUR TOUT LE DEVOIR : L'argumentation ne doit pas tourner autour d'elle.
-- NE JAMAIS INVENTER de doctrine, de noms de professeurs ou de jurisprudence.
-- Utilise exclusivement des auteurs reconnus (ex: Carbonnier, Terré, Simler, Lequette, Mazeaud, Ghestin, Viney, Jourdain, Malinvaud, Stoffel-Munck, Fabre-Magnan, Aubert, Savatier).
-- Si tu cites un arrêt complémentaire, il doit être RÉEL et PRÉCIS (Chambre, date, et si possible numéro de pourvoi).
-- Si tu n'es pas certain d'une référence, NE L'UTILISE PAS. L'exactitude est ta priorité absolue.
-- NE PAS UTILISER D'EMOJIS dans ta réponse.
-
-=== STRUCTURE ATTENDUE ===
-
-1. PHRASE D'AMORCE ET LIEN AVEC L'ARRÊT
-- Une phrase d'accroche percutante liée à la problématique de l'arrêt.
-- Un lien direct expliquant comment l'arrêt n° ${pourvoi} s'inscrit précisément dans cette problématique.
-
-2. PLAN ULTRA-DÉTAILLÉ (STRUCTURE CLASSIQUE : I. A, B / II. A, B)
-Le plan doit impérativement respecter la structure académique : un I (divisé en A et B) et un II (divisé en A et B).
-Les TITRES DOIVENT TOUJOURS ÊTRE APPARENT ET NUMÉROTÉS (I, II, A, B).
-
-RÈGLES CRITIQUES POUR LES TITRES :
-- AUCUN verbe conjugué.
-- AUCUN signe de ponctuation de type "deux-points" (:).
-- AUCUNE interrogation ou point d'interrogation.
-- Le titre doit être qualifié, élégant et laisser clairement apparaître la substance de l'argumentation.
-
-Pour chaque niveau du plan, respecte ce format :
-
----
-**[I. OU II. TITRE DU GRAND AXE]**
-
-**[A) OU B) TITRE DE LA SOUS-PARTIE TECHNIQUE ET QUALIFIÉ]**
-
-THÈSE CENTRALE : [Une phrase résumant l'idée directrice de la sous-partie.]
-
-COMMENT DÉBUTER : [Une phrase d'attaque rédigée que l'étudiant peut utiliser.]
-
-ARGUMENTATION DÉTAILLÉE :
-[L'argumentation doit porter sur l'analyse intrinsèque de la solution de la Cour de cassation]
-- [Argument 1 : Analyse technique et textuelle de la solution de la Cour dans cet arrêt.]
-- [Argument 2 : Justification de la solution ou critique par rapport aux faits de l'espèce.]
-- [Argument 3 : Portée juridique immédiate de la décision pour les parties ou le droit des obligations.]
-
-*Note : La doctrine unique ou la jurisprudence unique autorisée doit être insérée discrètement dans l'une de ces sections uniquement si cela est pertinent.*
-
-EXEMPLES / RÉFÉRENCES : [Uniquement si nécessaire et vérifié.]
----
-
-3. TRANSITIONS
-- Une transition rédigée (2-3 phrases) entre le I et le II, faisant le bilan du I pour annoncer la logique du II.
-
-=== INFORMATIONS SUR L'ARRÊT ===
-- Pourvoi : ${pourvoi}
-- Chambre : ${chambre || "à identifier"}
-- Date : ${date || "à identifier"}
-
-${contexteArret}
-
-Produis un contenu directement exploitable, sans préambule inutile.`;
-
-  const res = await fetch(URL, {
+  const response = await fetch(URL, {
     method: "POST",
     headers: {
-      "Content-Type":  "application/json",
-      "x-goog-api-key": process.env.GEMINI_API_KEY,
+      "x-api-key": process.env.ANTHROPIC_API_KEY,
+      "anthropic-version": "2023-06-01",
+      "content-type": "application/json"
     },
     body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }],
-      generationConfig: { temperature: 1.0, maxOutputTokens: 4096 },
-    }),
+      model: MODEL,
+      max_tokens: 2048,
+      messages: [{ role: "user", content: prompt }]
+    })
   });
 
-  if (!res.ok) {
-    const err = await res.json();
-    throw new Error(err?.error?.message || `Erreur Gemini HTTP ${res.status}`);
+  const result = await response.json();
+
+  if (!response.ok) {
+    console.error("Erreur détaillée:", result);
+    throw new Error(result.error?.message || "Erreur Anthropic");
   }
 
-  const data = await res.json();
-  const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!text) throw new Error("Réponse vide de l'API Gemini.");
-  return text;
+  return result.content[0].text;
 }
 
-// ── Route POST /generate ───────────────────────────────────────────────────────
 app.post("/generate", async (req, res) => {
-  const { pourvoi, chambre, date } = req.body;
-
-  if (!pourvoi || typeof pourvoi !== "string" || pourvoi.trim().length < 3) {
-    return res.status(400).json({ error: "Numéro de pourvoi invalide ou manquant." });
-  }
-  // chambre est optionnelle
-
-  const p = pourvoi.trim();
-  const c = chambre.trim();
-  const d = (date && typeof date === "string") ? date.trim() : null;
-
-  console.log(`\n📄  Nouveau commentaire — ${c} · ${d || "date N/A"} · n° ${p}`);
-
   try {
-    // Étape 1 : chercher l'arrêt sur Judilibre
-    console.log("🔍  Recherche Judilibre…");
-    const arret = await fetchArretFromJudilibre(p, c, d);
-    if (arret) {
-      console.log(`✅  Arrêt trouvé : ${arret.chambre} · ${arret.date} — texte : ${arret.texte ? "oui" : "non"}`);
-    }
-
-    // Étape 2 : générer avec Gemini
-    console.log("🤖  Envoi à Gemini…");
-    const commentary = await generateCommentary(p, c, d, arret);
-    console.log(`✅  Commentaire généré (${commentary.length} caractères)`);
-
-    res.json({ commentary });
-
+    const data = await generateDissertation(req.body.sujet);
+    res.json({ dissertation: data });
   } catch (err) {
-    console.error("❌  Erreur :", err.message);
-    res.status(500).json({ error: `Erreur : ${err.message}` });
+    res.status(500).json({ error: err.message });
   }
 });
 
-// ── Fallback ───────────────────────────────────────────────────────────────────
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
-});
+app.get("*", (req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
 
-// ── Démarrage ──────────────────────────────────────────────────────────────────
-app.listen(PORT, () => {
-  console.log(`\n⚖️   Serveur : http://localhost:${PORT}`);
-  console.log(`🔑  Gemini   : ${process.env.GEMINI_API_KEY  ? "✅" : "❌ MANQUANTE"}`);
-  console.log(`🔑  Judilibre: ${process.env.JUDILIBRE_API_KEY ? "✅" : "⚠️  non configurée (arrêts < jan 2025 uniquement)"}\n`);
-});
+app.listen(PORT, () => console.log(`🏛️ Serveur Claude : http://localhost:${PORT}`));

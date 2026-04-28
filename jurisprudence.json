@@ -1,0 +1,450 @@
+[
+  {
+    "nom": "Blanco",
+    "juridiction": "TC",
+    "date": "1873",
+    "theme": "Responsabilité administrative",
+    "apport": "La responsabilité de l'État ne peut être régie par les principes du Code civil ; elle obéit à des règles spéciales autonomes"
+  },
+  {
+    "nom": "Cadot",
+    "juridiction": "CE",
+    "date": "1889",
+    "theme": "Organisation juridictionnelle",
+    "apport": "Abandon de la théorie du ministre-juge ; le CE se reconnaît une compétence de droit commun sans saisine préalable du ministre"
+  },
+  {
+    "nom": "Prince Napoléon",
+    "juridiction": "CE",
+    "date": "1875",
+    "theme": "Actes de gouvernement",
+    "apport": "Le CE refuse de contrôler les actes de gouvernement et abandonne le critère politique pour un critère jurisprudentiel"
+  },
+  {
+    "nom": "Pelletier",
+    "juridiction": "TC",
+    "date": "1873",
+    "theme": "Faute personnelle / faute de service",
+    "apport": "Distinction entre faute personnelle (compétence judiciaire) et faute de service (compétence administrative)"
+  },
+  {
+    "nom": "Arrighi",
+    "juridiction": "CE",
+    "date": "1936",
+    "theme": "Théorie de la loi-écran",
+    "apport": "Le CE ne peut pas contrôler la constitutionnalité d'un règlement pris en application d'une loi ; la loi fait écran"
+  },
+  {
+    "nom": "Aramu",
+    "juridiction": "CE",
+    "date": "1945",
+    "theme": "Principes généraux du droit",
+    "apport": "Première consécration des PGD applicables même sans texte, dont le respect des droits de la défense"
+  },
+  {
+    "nom": "Dame Veuve Trompier-Gravier",
+    "juridiction": "CE",
+    "date": "1944",
+    "theme": "Droits de la défense",
+    "apport": "Consécration du principe du respect des droits de la défense comme PGD avant toute décision individuelle défavorable"
+  },
+  {
+    "nom": "Société du Journal l'Aurore",
+    "juridiction": "CE Ass.",
+    "date": "1948",
+    "theme": "Non-rétroactivité",
+    "apport": "Le principe de non-rétroactivité des actes administratifs réglementaires est un PGD"
+  },
+  {
+    "nom": "Dame Lamotte",
+    "juridiction": "CE",
+    "date": "1950",
+    "theme": "REP / voie de droit",
+    "apport": "Le REP est ouvert contre toute décision administrative même sans texte ; il ne peut être exclu que par la loi"
+  },
+  {
+    "nom": "Syndicat général des ingénieurs-conseils",
+    "juridiction": "CE",
+    "date": "1959",
+    "theme": "PGD et pouvoir réglementaire",
+    "apport": "Les PGD s'imposent au pouvoir réglementaire même en l'absence de dispositions législatives ; valeur supra-décrétale"
+  },
+  {
+    "nom": "Société KPMG",
+    "juridiction": "CE",
+    "date": "2006",
+    "theme": "Sécurité juridique",
+    "apport": "Consécration du principe de sécurité juridique comme PGD en droit administratif français"
+  },
+  {
+    "nom": "Nicolo",
+    "juridiction": "CE",
+    "date": "1989",
+    "theme": "Contrôle de conventionnalité",
+    "apport": "Le CE accepte d'écarter une loi postérieure contraire à un traité international ; abandon de la jurisprudence Semoules"
+  },
+  {
+    "nom": "Cafés Jacques Vabre",
+    "juridiction": "Cass. ch. mixte",
+    "date": "1975",
+    "theme": "Primauté droit UE",
+    "apport": "La Cour de cassation reconnaît la primauté du droit communautaire sur la loi nationale postérieure"
+  },
+  {
+    "nom": "Costa contre Enel",
+    "juridiction": "CJCE",
+    "date": "1964",
+    "theme": "Primauté droit UE",
+    "apport": "Consécration du principe de primauté du droit communautaire sur les droits nationaux"
+  },
+  {
+    "nom": "Compagnie Alitalia",
+    "juridiction": "CE Ass.",
+    "date": "1989",
+    "theme": "Directives UE",
+    "apport": "L'administration est tenue d'abroger un règlement contraire aux objectifs d'une directive non transposée"
+  },
+  {
+    "nom": "Arcelor",
+    "juridiction": "CE Ass.",
+    "date": "2007",
+    "theme": "Contrôle constitutionnalité / droit UE",
+    "apport": "Le CE contrôle indirectement la conformité du droit UE à la Constitution via la protection équivalente des droits fondamentaux"
+  },
+  {
+    "nom": "Sarran",
+    "juridiction": "CE Ass.",
+    "date": "1998",
+    "theme": "Primauté Constitution",
+    "apport": "La Constitution est au sommet de l'ordre juridique français ; la primauté du droit international ne vaut pas face à elle"
+  },
+  {
+    "nom": "Dame Perreux",
+    "juridiction": "CE",
+    "date": "2009",
+    "theme": "Effet direct des directives",
+    "apport": "Tout justiciable peut invoquer à l'appui d'un REP les dispositions précises et inconditionnelles d'une directive non transposée"
+  },
+  {
+    "nom": "SA Rothmans",
+    "juridiction": "CE Ass.",
+    "date": "1992",
+    "theme": "Primauté règlements UE",
+    "apport": "Les règlements communautaires s'imposent aux règlements français contraires"
+  },
+  {
+    "nom": "Liberté d'association",
+    "juridiction": "CC",
+    "date": "1971",
+    "theme": "Bloc de constitutionnalité",
+    "apport": "Intégration du Préambule de 1958 et de la DDHC dans le bloc de constitutionnalité ; contrôle de fond de la loi"
+  },
+  {
+    "nom": "Benjamin",
+    "juridiction": "CE",
+    "date": "1933",
+    "theme": "Police administrative / proportionnalité",
+    "apport": "Le juge contrôle la proportionnalité des mesures de police ; une interdiction générale et absolue est illégale si des mesures moins restrictives suffisent"
+  },
+  {
+    "nom": "Dames Dol et Laurent",
+    "juridiction": "CE",
+    "date": "1919",
+    "theme": "Circonstances exceptionnelles / police",
+    "apport": "En temps de guerre, les pouvoirs de police peuvent être élargis sans violer la légalité ; théorie des circonstances exceptionnelles"
+  },
+  {
+    "nom": "Heyriès",
+    "juridiction": "CE",
+    "date": "1918",
+    "theme": "Circonstances exceptionnelles",
+    "apport": "Le gouvernement peut suspendre certaines garanties légales en période de guerre sans engager d'illégalité"
+  },
+  {
+    "nom": "Labonne",
+    "juridiction": "CE",
+    "date": "1919",
+    "theme": "Police générale nationale",
+    "apport": "Le chef de l'État détient un pouvoir réglementaire de police générale sur tout le territoire en l'absence de texte"
+  },
+  {
+    "nom": "Morsang-sur-Orge",
+    "juridiction": "CE",
+    "date": "1995",
+    "theme": "Ordre public / dignité humaine",
+    "apport": "Le respect de la dignité humaine est une composante de l'ordre public permettant d'interdire le lancer de nains"
+  },
+  {
+    "nom": "Société Les Films Lutétia",
+    "juridiction": "CE",
+    "date": "1959",
+    "theme": "Police du cinéma / ordre public local",
+    "apport": "Le maire peut interdire un film régulièrement visé si des circonstances locales particulières le justifient"
+  },
+  {
+    "nom": "Action française",
+    "juridiction": "TC",
+    "date": "1935",
+    "theme": "Voie de fait",
+    "apport": "Fondement de la théorie de la voie de fait ; atteinte grave à une liberté individuelle ou à la propriété privée"
+  },
+  {
+    "nom": "Baud / Noualek",
+    "juridiction": "CE / TC",
+    "date": "1951",
+    "theme": "Police judiciaire / police administrative",
+    "apport": "Distinction entre police administrative (préventive, compétence administrative) et police judiciaire (répressive, compétence judiciaire)"
+  },
+  {
+    "nom": "Narcy",
+    "juridiction": "CE",
+    "date": "1963",
+    "theme": "Service public / organisme privé",
+    "apport": "Trois critères cumulatifs pour qu'un organisme privé gère un SP : mission d'intérêt général, prérogatives de puissance publique, contrôle de l'administration"
+  },
+  {
+    "nom": "APREI",
+    "juridiction": "CE",
+    "date": "2007",
+    "theme": "Service public / identification",
+    "apport": "Même sans PPP, une activité peut être qualifiée de SP si l'administration a entendu lui conférer ce caractère"
+  },
+  {
+    "nom": "Epoux Bertin",
+    "juridiction": "CE",
+    "date": "1956",
+    "theme": "Contrat administratif / critère SP",
+    "apport": "Un contrat confiant l'exécution même du SP est administratif par son objet, même conclu entre deux particuliers en apparence"
+  },
+  {
+    "nom": "Berkani",
+    "juridiction": "TC",
+    "date": "1996",
+    "theme": "SPA / agents",
+    "apport": "Tous les agents non statutaires travaillant pour un SPA sont des agents contractuels de droit public"
+  },
+  {
+    "nom": "Epoux Barbier",
+    "juridiction": "TC",
+    "date": "1968",
+    "theme": "SPIC / actes administratifs",
+    "apport": "Les actes d'un SPIC relatifs à l'organisation même du service sont des actes administratifs soumis au juge administratif"
+  },
+  {
+    "nom": "Société des concerts du Conservatoire",
+    "juridiction": "CE",
+    "date": "1951",
+    "theme": "Égalité devant le SP",
+    "apport": "Le principe d'égalité des usagers devant le service public est un PGD"
+  },
+  {
+    "nom": "Denoyez et Chorques",
+    "juridiction": "CE",
+    "date": "1974",
+    "theme": "Égalité / discrimination tarifaire",
+    "apport": "Des différences tarifaires entre usagers d'un SP sont légales si elles reposent sur des différences de situation ou un motif d'intérêt général"
+  },
+  {
+    "nom": "Dehaene",
+    "juridiction": "CE",
+    "date": "1950",
+    "theme": "Droit de grève / SP",
+    "apport": "Le droit de grève des fonctionnaires est reconnu mais peut être limité par le gouvernement pour assurer la continuité du SP"
+  },
+  {
+    "nom": "USIA",
+    "juridiction": "CE",
+    "date": "1956",
+    "theme": "SPA / présomption",
+    "apport": "Un SP est présumé SPA sauf si, par son objet, ses ressources et ses modalités, il ressemble à une entreprise industrielle et commerciale"
+  },
+  {
+    "nom": "Duvignères",
+    "juridiction": "CE",
+    "date": "2002",
+    "theme": "Circulaires",
+    "apport": "Distinction entre circulaires impératives (susceptibles de REP) et circulaires non impératives (irrecevables au REP)"
+  },
+  {
+    "nom": "Institution Notre-Dame du Kreisker",
+    "juridiction": "CE Ass.",
+    "date": "1954",
+    "theme": "Circulaires réglementaires",
+    "apport": "Distinction ancienne entre circulaires réglementaires (REP possible) et interprétatives (REP impossible), remplacée par Duvignères"
+  },
+  {
+    "nom": "Pariset",
+    "juridiction": "CE",
+    "date": "1875",
+    "theme": "Détournement de pouvoir",
+    "apport": "Premier arrêt consacrant le détournement de pouvoir comme cas d'ouverture du REP"
+  },
+  {
+    "nom": "Dame Cachet",
+    "juridiction": "CE",
+    "date": "1922",
+    "theme": "Retrait des actes administratifs",
+    "apport": "L'administration ne peut retirer un acte individuel créateur de droits que dans le délai de recours contentieux (2 mois)"
+  },
+  {
+    "nom": "Ternon",
+    "juridiction": "CE Ass.",
+    "date": "2001",
+    "theme": "Retrait des actes administratifs",
+    "apport": "L'administration dispose de 4 mois pour retirer un acte individuel illégal créateur de droits"
+  },
+  {
+    "nom": "Danthony",
+    "juridiction": "CE",
+    "date": "2011",
+    "theme": "Vices de procédure",
+    "apport": "Un vice de procédure n'entraîne l'annulation que s'il a privé les intéressés d'une garantie ou s'il a influencé le sens de la décision"
+  },
+  {
+    "nom": "Société Fairvesta / Numéricable",
+    "juridiction": "CE Ass.",
+    "date": "2016",
+    "theme": "Actes de droit souple",
+    "apport": "Les actes de droit souple (recommandations, lignes directrices) sont susceptibles de REP s'ils ont des effets notables sur les destinataires"
+  },
+  {
+    "nom": "GISTI",
+    "juridiction": "CE",
+    "date": "2020",
+    "theme": "Actes de droit souple / circulaires",
+    "apport": "Les documents de portée générale sans caractère impératif sont susceptibles de REP s'ils ont des effets notables"
+  },
+  {
+    "nom": "Tomaso Grecco",
+    "juridiction": "CE",
+    "date": "1905",
+    "theme": "Responsabilité pour faute / police",
+    "apport": "L'État peut être responsable des fautes commises dans l'exercice de la police administrative ; abandon progressif de l'irresponsabilité"
+  },
+  {
+    "nom": "Cames",
+    "juridiction": "CE",
+    "date": "1895",
+    "theme": "Responsabilité sans faute / risque",
+    "apport": "Première responsabilité sans faute de l'État vis-à-vis de ses agents victimes d'accidents de service (risque professionnel)"
+  },
+  {
+    "nom": "Société La Fleurette",
+    "juridiction": "CE",
+    "date": "1938",
+    "theme": "Responsabilité du fait des lois",
+    "apport": "La loi peut engager la responsabilité de l'État sans faute si elle impose une charge spéciale et anormale à certains particuliers"
+  },
+  {
+    "nom": "Anguet",
+    "juridiction": "CE",
+    "date": "1911",
+    "theme": "Cumul de fautes",
+    "apport": "La victime peut mettre en jeu la responsabilité de l'État même si une faute personnelle de l'agent a concouru au dommage"
+  },
+  {
+    "nom": "Lemonnier",
+    "juridiction": "CE",
+    "date": "1918",
+    "theme": "Cumul de responsabilités",
+    "apport": "La victime peut poursuivre l'administration même en présence d'une faute personnelle si celle-ci n'est pas dépourvue de tout lien avec le service"
+  },
+  {
+    "nom": "Laruelle / Delville",
+    "juridiction": "CE",
+    "date": "1951",
+    "theme": "Actions récursoires",
+    "apport": "L'administration peut se retourner contre son agent fautif (Laruelle) ; l'agent peut se retourner contre l'administration (Delville)"
+  },
+  {
+    "nom": "Darmont",
+    "juridiction": "CE Ass.",
+    "date": "1978",
+    "theme": "Responsabilité du service de la justice",
+    "apport": "La responsabilité de l'État du fait des juridictions judiciaires requiert une faute lourde"
+  },
+  {
+    "nom": "Thouzellier",
+    "juridiction": "CE",
+    "date": "1956",
+    "theme": "Responsabilité sans faute / risque spécial",
+    "apport": "L'État est responsable sans faute des dommages causés par des détenus en fuite placés en milieu ouvert (risque spécial)"
+  },
+  {
+    "nom": "Barel",
+    "juridiction": "CE Ass.",
+    "date": "1954",
+    "theme": "Égalité accès emplois publics",
+    "apport": "Le principe d'égalité d'accès aux emplois publics interdit toute discrimination fondée sur les opinions politiques"
+  },
+  {
+    "nom": "Feutry",
+    "juridiction": "TC",
+    "date": "1908",
+    "theme": "Compétence juridictionnelle / responsabilité",
+    "apport": "Unification du contentieux de la responsabilité administrative devant le juge administratif"
+  },
+  {
+    "nom": "Société Tropic Travaux Signalisation",
+    "juridiction": "CE Ass.",
+    "date": "2007",
+    "theme": "Recours contractuel / concurrent évincé",
+    "apport": "Tout concurrent évincé peut contester la validité d'un contrat administratif devant le juge du plein contentieux"
+  },
+  {
+    "nom": "Département du Tarn-et-Garonne",
+    "juridiction": "CE",
+    "date": "2014",
+    "theme": "Recours contractuel / tiers",
+    "apport": "Tout tiers lésé par un contrat administratif peut en contester la validité dans le cadre d'un recours de pleine juridiction"
+  },
+  {
+    "nom": "Commune de Béziers II",
+    "juridiction": "CE",
+    "date": "2011",
+    "theme": "Résiliation unilatérale / recours",
+    "apport": "Le cocontractant peut contester la résiliation unilatérale devant le juge pour obtenir la reprise des relations contractuelles"
+  },
+  {
+    "nom": "Compagnie des tramways de Cherbourg",
+    "juridiction": "CE",
+    "date": "1932",
+    "theme": "Imprévision",
+    "apport": "Consécration de la théorie de l'imprévision : l'administration doit indemniser le cocontractant en cas de bouleversement économique imprévisible"
+  },
+  {
+    "nom": "Cie générale française des tramways",
+    "juridiction": "CE",
+    "date": "1910",
+    "theme": "Contrats / modification unilatérale",
+    "apport": "L'administration dispose d'un pouvoir de modification unilatérale du contrat pour assurer la continuité du SP"
+  },
+  {
+    "nom": "Rouquette",
+    "juridiction": "CE Ass.",
+    "date": "1999",
+    "theme": "QPC / contrôle de conventionnalité",
+    "apport": "Seul le Conseil constitutionnel est compétent pour le contrôle de constitutionnalité des lois ; le juge administratif contrôle la conventionnalité"
+  },
+  {
+    "nom": "Camino",
+    "juridiction": "CE",
+    "date": "1916",
+    "theme": "Contrôle des faits / erreur de fait",
+    "apport": "Le juge administratif contrôle l'exactitude matérielle des faits servant de base à la décision administrative"
+  },
+  {
+    "nom": "Société des Granits porphyroïdes des Vosges",
+    "juridiction": "CE",
+    "date": "1912",
+    "theme": "Contrats administratifs / clause exorbitante",
+    "apport": "Un contrat contenant des clauses exorbitantes du droit commun est un contrat administratif"
+  },
+  {
+    "nom": "Société Axa France IARD",
+    "juridiction": "TC",
+    "date": "2014",
+    "theme": "Clause exorbitante / définition",
+    "apport": "Définition modernisée : clause exorbitante = clause qui, dans un contrat de droit privé, serait illicite ou inhabituelle"
+  }
+]

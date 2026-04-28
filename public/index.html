@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Commentaire d'Arrêt · IA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Dissertation Juridique · Droit Administratif</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -96,17 +96,11 @@
       margin-bottom: 0.45rem;
     }
 
-    .field-optional {
-      font-style: italic;
-      text-transform: none;
-      letter-spacing: 0;
-      margin-left: 0.3rem;
-    }
-
-    .field input[type="text"] {
+    .field textarea {
       width: 100%;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1rem;
+      min-height: 100px;
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.1rem;
       color: var(--ink);
       background: var(--parchment);
       border: 1px solid var(--border);
@@ -114,30 +108,15 @@
       padding: 0.7rem 0.9rem;
       outline: none;
       transition: border-color 0.2s, box-shadow 0.2s;
-      -webkit-appearance: none;
+      resize: vertical;
     }
 
-    .field input[type="text"]::placeholder { color: var(--ink-muted); opacity: 0.6; }
+    .field textarea::placeholder { color: var(--ink-muted); opacity: 0.6; }
 
-    .field input[type="text"]:focus {
+    .field textarea:focus {
       border-color: var(--gold);
       box-shadow: 0 0 0 3px rgba(184,145,58,0.12);
     }
-
-    /* ── Judilibre notice ──────────────────────────────────────────────────── */
-    .judilibre-notice {
-      margin-top: 0.9rem;
-      padding: 0.75rem 1rem;
-      background: #f5f0e8;
-      border-left: 3px solid var(--gold);
-      border-radius: var(--radius);
-      font-size: 0.78rem;
-      color: var(--ink-soft);
-      line-height: 1.6;
-    }
-
-    .judilibre-notice strong { color: var(--ink); }
-    .judilibre-notice a { color: var(--red-law); text-underline-offset: 2px; }
 
     /* ── Button ────────────────────────────────────────────────────────────── */
     #generate-btn {
@@ -231,12 +210,6 @@
       line-height: 1.6;
     }
 
-    .result-id strong {
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--red-law);
-      font-weight: 400;
-    }
-
     #copy-btn {
       font-family: 'Libre Baskerville', serif;
       font-size: 0.7rem;
@@ -256,7 +229,7 @@
     #copy-btn:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
     #copy-btn.copied { background: #2d7a4f; color: #fff; border-color: #2d7a4f; }
 
-    /* ── Texte du commentaire ──────────────────────────────────────────────── */
+    /* ── Texte de la dissertation ────────────────────────────────────────── */
     #result-content {
       background: #fff;
       border: 1px solid var(--border);
@@ -268,22 +241,25 @@
       color: var(--ink);
     }
 
-    #result-content h2 {
+    # result-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      padding: 0.8rem 1rem;
+      background: #f8f4f0;
+      border-left: 5px solid var(--red-law);
+      color: var(--ink);
+    }
+
+    # result-content h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
       font-weight: 700;
-      margin: 2rem 0 0.6rem;
-      padding-bottom: 0.35rem;
+      color: var(--red-law);
+      margin: 1.8rem 0 0.8rem;
+      padding-bottom: 0.2rem;
       border-bottom: 1px solid var(--border);
-    }
-
-    #result-content h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 0.97rem;
-      font-weight: 700;
-      font-style: italic;
-      color: var(--ink-soft);
-      margin: 1.4rem 0 0.4rem;
     }
 
     #result-content p {
@@ -306,85 +282,6 @@
       font-style: italic;
     }
 
-    /* ════════════════════════════════════════════════════════════════════════
-       APPLE WATCH — watchOS 8 · WebKit · viewport ~197px
-       OPTIMISATION TOTALE — Densité maximale, contraste infini
-    ════════════════════════════════════════════════════════════════════════ */
-    @media (max-width: 220px) {
-      html, body {
-        background: #000 !important;
-        color: #fff !important;
-        font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
-        font-size: 12px !important;
-        overflow-x: hidden;
-      }
-
-      header {
-        padding: 5px 2px !important;
-        background: #000 !important;
-        border-bottom: 1px solid #444 !important;
-      }
-
-      h1 {
-        font-size: 13px !important;
-        font-weight: 800 !important;
-        color: #fff !important;
-      }
-
-      main { padding: 4px !important; }
-
-      .card {
-        padding: 6px !important;
-        margin-bottom: 4px !important;
-        background: #000 !important;
-        border: 1px solid #333 !important;
-      }
-
-      .field-label {
-        font-size: 10px !important;
-        color: #ff9f0a !important; /* Orange Apple Watch */
-        margin-bottom: 2px !important;
-      }
-
-      .field input[type="text"] {
-        font-size: 13px !important;
-        min-height: 34px !important;
-        background: #1c1c1e !important;
-        color: #fff !important;
-        border: 1px solid #3a3a3c !important;
-      }
-
-      #generate-btn {
-        min-height: 40px !important;
-        font-size: 12px !important;
-        background: #ff3b30 !important; /* Rouge vif Apple */
-        font-weight: bold !important;
-      }
-
-      #result-content {
-        padding: 8px 6px !important;
-        font-size: 12px !important;
-        line-height: 1.4 !important;
-        background: #000 !important;
-        border: 1px solid #333 !important;
-      }
-
-      #result-content h2 {
-        font-size: 12px !important;
-        color: #ff9f0a !important;
-        margin-top: 10px !important;
-        border-bottom: 1px solid #333 !important;
-      }
-
-      #result-content h3 { font-size: 12px !important; color: #64d2ff !important; }
-      #result-content p { margin-bottom: 6px !important; }
-
-      .result-bar { border-bottom: 1px solid #333; padding-bottom: 4px; }
-      #copy-btn { display: none !important; } /* Inutile sur Watch */
-      
-      .header-eyebrow, .subtitle, footer, .judilibre-notice { display: none !important; }
-    }
-
     /* ── Mobile standard ───────────────────────────────────────────────────── */
     @media (max-width: 600px) {
       main { padding: 1.5rem 1rem 4rem; }
@@ -396,68 +293,36 @@
 <body>
 
   <header>
-    <div class="header-eyebrow">Droit Civil · Droit des Obligations</div>
-    <h1>Générateur de<br><em>Commentaire d'Arrêt</em></h1>
-    <p class="subtitle">Intelligence artificielle · Cour de cassation</p>
+    <div class="header-eyebrow">Droit Public · Droit Administratif</div>
+    <h1>Générateur de<br><em>Dissertation Juridique</em></h1>
+    <p class="subtitle">Intelligence artificielle · Méthode académique</p>
   </header>
 
   <main>
 
     <div class="card">
-
-      <!-- Chambre (optionnel) -->
       <div class="field">
-        <label class="field-label" for="chambre-input">
-          Chambre <span class="field-optional">(optionnel)</span>
-        </label>
-        <input
-          type="text"
-          id="chambre-input"
-          placeholder="Ex : Civ. 1, Com., Soc., Crim."
+        <label class="field-label" for="sujet-input">Sujet de dissertation</label>
+        <textarea
+          id="sujet-input"
+          placeholder="Ex : La dualité de la juridiction administrative : héritage historique ou nécessité moderne ?"
           autocomplete="off"
-          spellcheck="false"
-        />
-      </div>
-
-      <!-- Date (optionnel) -->
-      <div class="field">
-        <label class="field-label" for="date-input">
-          Date de l'arrêt <span class="field-optional">(optionnel)</span>
-        </label>
-        <input
-          type="text"
-          id="date-input"
-          placeholder="Ex : 24 novembre 1998"
-          autocomplete="off"
-          spellcheck="false"
-        />
-      </div>
-
-      <!-- Numéro de pourvoi (obligatoire) -->
-      <div class="field">
-        <label class="field-label" for="pourvoi-input">Numéro de pourvoi</label>
-        <input
-          type="text"
-          id="pourvoi-input"
-          placeholder="Ex : 21-15.123"
-          autocomplete="off"
-          spellcheck="false"
-        />
+          spellcheck="true"
+        ></textarea>
       </div>
 
       <button id="generate-btn">
-        <span>⚖</span> Générer le commentaire
+        <span>🏛️</span> Générer la dissertation
       </button>
-
     </div>
 
     <!-- Loading -->
     <div id="loading">
       <span class="loading-icon">⚖</span>
       <div class="loading-steps">
-        <div class="loading-step" id="step-1">① Recherche sur Judilibre…</div>
-        <div class="loading-step" id="step-2">② Transmission à Gemini…</div>
-        <div class="loading-step" id="step-3">③ Rédaction du commentaire…</div>
+        <div class="loading-step" id="step-1">① Analyse du sujet…</div>
+        <div class="loading-step" id="step-2">② Recherche des références (CE, TC)…</div>
+        <div class="loading-step" id="step-3">③ Rédaction académique…</div>
       </div>
     </div>
 
@@ -468,8 +333,7 @@
     <section id="result-section" aria-live="polite">
       <div class="result-bar">
         <div class="result-id">
-          <strong id="result-chambre"></strong> · <strong id="result-date"></strong><br>
-          Pourvoi n° <strong id="result-pourvoi"></strong>
+          Sujet : <strong id="result-sujet-display"></strong>
         </div>
         <button id="copy-btn">📋 Copier</button>
       </div>
@@ -479,21 +343,17 @@
   </main>
 
   <footer>
-    Outil pédagogique · Ne constitue pas un avis juridique.
+    Outil pédagogique · Spécialité Droit Administratif.
   </footer>
 
   <script>
-    var inputPourvoi  = document.getElementById('pourvoi-input');
-    var inputChambre  = document.getElementById('chambre-input');
-    var inputDate     = document.getElementById('date-input');
+    var inputSujet    = document.getElementById('sujet-input');
     var btn           = document.getElementById('generate-btn');
     var loading       = document.getElementById('loading');
     var errorBox      = document.getElementById('error-box');
     var resultSec     = document.getElementById('result-section');
     var resultDiv     = document.getElementById('result-content');
-    var resultPourvoi = document.getElementById('result-pourvoi');
-    var resultChambre = document.getElementById('result-chambre');
-    var resultDate    = document.getElementById('result-date');
+    var resultSujet   = document.getElementById('result-sujet-display');
     var copyBtn       = document.getElementById('copy-btn');
     var steps         = [
       document.getElementById('step-1'),
@@ -502,23 +362,14 @@
     ];
     var stepTimer = null;
 
-    // Entrée clavier sur tous les champs
-    [inputPourvoi, inputChambre, inputDate].forEach(function(el) {
-      el.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') generate();
-      });
-    });
-
     btn.addEventListener('click', generate);
 
     function generate() {
-      var pourvoi = inputPourvoi.value.trim();
-      var chambre = inputChambre.value.trim();
-      var date    = inputDate.value.trim();
+      var sujet = inputSujet.value.trim();
 
-      if (!pourvoi) {
-        showError('Veuillez saisir un numéro de pourvoi.');
-        inputPourvoi.focus();
+      if (sujet.length < 5) {
+        showError('Veuillez saisir un sujet de dissertation valide.');
+        inputSujet.focus();
         return;
       }
 
@@ -529,7 +380,7 @@
       fetch('/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ pourvoi: pourvoi, chambre: chambre, date: date })
+        body: JSON.stringify({ sujet: sujet })
       })
       .then(function(res) {
         return res.json().then(function(data) {
@@ -538,7 +389,7 @@
         });
       })
       .then(function(data) {
-        displayResult(pourvoi, chambre, date, data.commentary);
+        displayResult(sujet, data.dissertation);
       })
       .catch(function(err) {
         showError(err.message || 'Une erreur inattendue est survenue.');
@@ -548,12 +399,10 @@
       });
     }
 
-    function displayResult(pourvoi, chambre, date, text) {
-      resultPourvoi.textContent = pourvoi;
-      resultChambre.textContent = chambre || '—';
-      resultDate.textContent    = date    || 'date non renseignée';
-      resultDiv.innerHTML       = formatMarkdown(text);
-      resultSec.style.display   = 'block';
+    function displayResult(sujet, text) {
+      resultSujet.textContent = sujet.length > 50 ? sujet.substring(0, 47) + '...' : sujet;
+      resultDiv.innerHTML     = formatMarkdown(text);
+      resultSec.style.display = 'block';
       setTimeout(function() {
         resultSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 100);
@@ -561,21 +410,28 @@
 
     function formatMarkdown(text) {
       var html = text.replace(/\r\n/g, '\n');
+      
+      // Titres
       html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
       html = html.replace(/^## (.+)$/gm,  '<h2>$1</h2>');
       html = html.replace(/^# (.+)$/gm,   '<h2>$1</h2>');
-      html = html.replace(/^\*\*([^*\n]+)\*\*\s*$/gm, '<h2>$1</h2>');
+      
+      // Gras et Italique
       html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
       html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
-      html = html.replace(/_(.+?)_/g, '<em>$1</em>');
+      
+      // Listes à puces
+      html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
+      html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+
       var blocks = html.split(/\n{2,}/);
       html = blocks.map(function(block) {
         block = block.trim();
         if (!block) return '';
-        if (/^<h[23]>/.test(block)) return block;
-        block = block.replace(/\n/g, ' ');
-        return '<p>' + block + '</p>';
+        if (/^<h[23]>/.test(block) || /^<ul>/.test(block)) return block;
+        return '<p>' + block.replace(/\n/g, '<br>') + '</p>';
       }).join('\n');
+      
       return html;
     }
 
@@ -606,7 +462,7 @@
     function setLoading(active) {
       loading.style.display = active ? 'block' : 'none';
       btn.disabled = active;
-      btn.innerHTML = active ? '<span>⏳</span> Génération…' : '<span>⚖</span> Générer le commentaire';
+      btn.innerHTML = active ? '<span>⏳</span> Génération…' : '<span>🏛️</span> Générer la dissertation';
       if (active) {
         steps.forEach(function(s) { s.classList.remove('active'); });
         steps[0].classList.add('active');

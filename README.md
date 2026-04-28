@@ -1,13 +1,13 @@
-# ⚖️ Générateur de Commentaire d'Arrêt
+# 🏛️ Générateur de Dissertation Juridique (Droit Administratif)
 
-Application web minimaliste pour générer automatiquement des commentaires d'arrêt en droit civil (droit des obligations) à partir d'un numéro de pourvoi, via l'API Google Gemini.
+Application web minimaliste pour générer automatiquement des plans détaillés et des introductions de dissertations juridiques spécialisées en **Droit Administratif**, via l'API Google Gemini.
 
 ---
 
 ## 🗂️ Arborescence du projet
 
 ```
-commentaire-arret/
+dissertation-administrative/
 ├── public/
 │   └── index.html        ← Frontend complet (HTML + CSS + JS)
 ├── server.js             ← Backend Express + appel Gemini
@@ -68,7 +68,7 @@ Rendez-vous sur → **http://localhost:3000**
 **Uniquement dans le fichier `.env`**, jamais dans le code source.
 
 ```
-commentaire-arret/
+dissertation-administrative/
 └── .env          ← ici, ligne GEMINI_API_KEY=...
 ```
 
@@ -78,15 +78,15 @@ Le fichier `.env` est ignoré par Git (via `.gitignore`). Ne le commitez jamais.
 
 ## 🔧 Personnaliser le prompt
 
-Le prompt est localisé dans `server.js`, dans la fonction `generateCommentary()` :
+Le prompt est localisé dans `server.js`, dans la fonction `generateDissertation()` :
 
 ```js
 const prompt = `
-Tu es un juriste expert en droit civil français...
+Tu es un professeur agrégé de droit public français...
 `;
 ```
 
-Modifiez-le librement pour affiner la structure, le ton ou la longueur des commentaires.
+Modifiez-le librement pour affiner la structure, le ton ou le niveau d'exigence académique.
 
 ---
 
@@ -96,11 +96,11 @@ Modifiez-le librement pour affiner la structure, le ton ou la longueur des comme
 |-----------|--------------------------|
 | Frontend  | HTML5 + CSS3 + JS vanilla |
 | Backend   | Node.js + Express 4      |
-| IA        | Google Gemini 1.5 Pro    |
+| IA        | Google Gemini 1.5 Flash  |
 | Config    | dotenv                   |
 
 ---
 
 ## ⚠️ Avertissement
 
-Cet outil est à vocation **pédagogique**. Les commentaires générés par intelligence artificielle sont indicatifs et ne constituent pas un avis juridique professionnel.
+Cet outil est à vocation **pédagogique**. Les dissertations générées par intelligence artificielle sont des bases de travail indicatives et ne dispensent pas d'une recherche approfondie et d'une analyse critique.
